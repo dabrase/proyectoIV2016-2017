@@ -69,7 +69,4 @@ Ahora añadimos el fichero .gitignore al repositorio del proyecto.
 A continuación como entiendo que la explicación de como se ha hecho la practica 0 constituye material externo cambio a la rama hito0 y ahí subo las capturas y el fichero .md que constituye la explicación de la práctica 0.
 
 
-
-
-
-
+![img](https://github.com/LuisGi93/proyectoIV2016-2017/blob/master/pictures/oracle80.png)
