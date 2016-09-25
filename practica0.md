@@ -39,11 +39,11 @@ En la siguiente captura configuramos el email y el nombre para que aparezcan en 
 
 Creamos como hito entregar la practica 0.
 
-![img](https://github.com/LuisGi93/proyectoIV2016-2017/blob/hito0/capturas/oracl61.png)
+![img](https://github.com/LuisGi93/proyectoIV2016-2017/blob/hito0/capturas/oracle61.png)
 
 Y a continuación creamos como primer issue actualizar el README con los datos que se nos piden en el guión de la práctica 0.
 
-![img](https://github.com/LuisGi93/proyectoIV2016-2017/blob/hito0/capturas/oracl62.png)
+![img](https://github.com/LuisGi93/proyectoIV2016-2017/blob/hito0/capturas/oracle62.png)
 
 ###Creamos una rama para entregar practica0.
 
