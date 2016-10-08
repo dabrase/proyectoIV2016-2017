@@ -25,4 +25,4 @@ La aplicación distingue entre dos usuarios que en principio podrán desarrolar 
 * Necesita disponer de un entorno de pruebas.
 * Es necesario automatizar test para probar que el sistema responde correctamente ante  un cambio introducido.
 
-
+Para el desarrollo del proyecto se usará Django.
