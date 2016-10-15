@@ -17,6 +17,9 @@ La aplicación distingue entre dos usuarios que en principio podrán desarrolar 
 	- Proponer peliculas.
 	
 	
+El proyecto va a consistir en una web de recetas de cocina, en ella se podran subir recetas por parte de los usuarios registrados por lo cual será necesario tener un servicio para la autenticación de los usuarios y además un servicio de logs ya que se podrá hacer sugerencias sobre las recetas y es necesario monitorizar si  alguién inscribe alguna clase de insulto. También por motivos estadísticos. También hace falta un servicio para recibir sugerencias asociadas con una receta.
+	
+	
 ##Que necesita el proyecto:
 
 * Necesita estar continuamente online.
