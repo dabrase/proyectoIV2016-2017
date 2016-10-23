@@ -1,28 +1,20 @@
-#Proyecto Infraestructura virtual. 
+#Proyecto Infraestructura virtual.
 
 ## Descripción.
-Proyecto que va a consistir en una aplicación web que permita a los usuarios encontrar peliculas similares a alguna que les guste. Para ello es necesario poder añadir peliculas al sistema junto con algún sistema de votación que permita a los usuarios a partir de una pelicula votar peliculas que piensan que tienen una temática similar a esta .
 
-La aplicación distingue entre dos usuarios que en principio podrán desarrolar las siguientes acciones:
+El fin del proyecto a desarrollar es ~~una web~~ un bot de Telegram que aconseje peliculas a un usuario que interaccione con el (él o el, objeto :?). Por tanto a traves de la interfaz de Telegram se llevará a cabo la interacción entre máquina y hombre de tal forma que ambos mutuamente comprendan que es lo que quieren de cada uno.
 
-* El administrador que puede realizar las siguientes acciones;
-	- Añadir peliculas.
-	- Eliminar las peliculas.
-	- Listar las peliculas
-	
- 	
-* El usuario sin registrar  que puede
-	- Buscar peliculas
-	- Votar peliculas similares.
-	- Proponer peliculas.
-	
-	
-##Que necesita el proyecto:
+Los servicios *mínimos* que necesita el bot son:
+ - Servicio que al recibir el nombre de una pelicula obtenga peliculas parecidas y responda.
 
-* Necesita estar continuamente online.
-* Necesita poder almacenar información.
-* Necesita automatizar todo el proceso de instalación y configuración en un nuevo servidor.
-* Necesita disponer de un entorno de pruebas.
-* Es necesario automatizar test para probar que el sistema responde correctamente ante  un cambio introducido.
+Otros servicios:
+ - Servicio de logs para poder almacenar todo lo que le ocurre al bot.
+ - Servicio que monitorize el estado de todos los demás servicios y en caso de detectar fallo en alguno avise al responsable humano via email o via telegram.
+ - Primer servicio que reciba las peticiones y le pase la pelota al servicio correspondiente.
 
-Para el desarrollo del proyecto se usará Django.
+Idealmente se preveé el uso de un servidor para cada servicio pero probablemente se tendrá que aglutinar algunos de los servicios en el mismo. Será necesario almacenar que peliculas ha visto que usuario para lo cual se utilizará una base de datos y posiblemente otra base de datos para almacenar todos los logs que genere el bot. No se descarta la modificación de esta estructura ni de la eliminación de servicios o de añadir más en función del desarrollo del proyecto.
+
+## Que vamos a utilizar
+Como es lógico para realizar el proyecto se utilizará el desarrollo basado en pruebas junto con integración continua para lo cual más adelante se especificarán que herramientas utilizaremos.  Las herramientas exactas a utilizar se verá conforme avanze el proyecto.
+
+El lenguaje a utilizar es ~~python~~ Ruby aunque si se descubre que la API le falta funcionalidad se cambiará a NodeJS.
