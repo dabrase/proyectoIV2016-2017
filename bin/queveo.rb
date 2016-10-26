@@ -2,11 +2,6 @@
 require 'telegram/bot'
 
 
-token = ENV["token"]
-
-
-
-
 class Bot
 
   def initialize(token)
