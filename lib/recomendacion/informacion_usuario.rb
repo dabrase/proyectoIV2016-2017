@@ -1,5 +1,5 @@
 require 'dbi'
-require "resolv-replace.rb"
+
 
 module Recomendacion
 # Engloba los datos asociados a una solicitud de recomendacion.
@@ -15,7 +15,8 @@ module Recomendacion
     def to_s
       return "#@titulo"
     end
-
+#Evidentemente esta einformación es volatil si no se almacena en una base de datos
+#es necesario que se guarden las peliculas que ha visto un usuario del bot
     def aniadir_pelicula_vista(titulo)
       @peliculas_vistas << titulo
     end
@@ -23,12 +24,12 @@ module Recomendacion
     def obtener_peliculas_vistas
       return @peliculas_vistas
     end
-    
+
     def generar_recomendaciones
 
     end
-    
-    
+
+
 
   end
 end

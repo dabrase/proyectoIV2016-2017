@@ -4,6 +4,8 @@ require 'telegram/bot'
 
 class Bot
 
+  attr_reader :token
+  attr_accessor :bot
   def initialize(token)
     @bot=Telegram::Bot::Client;
     @token=token
@@ -28,17 +30,11 @@ class Bot
     end
   end
 
-  def automensaje
+
+  def validez_token
     @bot.run(@token) do |botox|
-        botox.api.send_message(chat_id: 94337652, text: "Adios, adios")
-      end
+      return botox.api.get_me
+    end
   end
 
-
-
-
-  def hola
-
-    "hola"
-  end
 end
