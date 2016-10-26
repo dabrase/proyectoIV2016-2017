@@ -11,6 +11,5 @@ gem 'rspec'
 gem 'dbi'
 
 group :test do
-  gem 'shoulda'
   gem 'rake'
 end
