@@ -9,4 +9,8 @@ gem 'test-unit'
 gem 'shoulda'
 gem 'rspec'
 gem 'dbi'
-require 'rake'
+
+group :test do
+  gem 'shoulda'
+  gem 'rake'
+end
