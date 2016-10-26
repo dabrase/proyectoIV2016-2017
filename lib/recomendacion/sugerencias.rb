@@ -11,11 +11,11 @@ module Recomendacion
 #y del titulo insertado
   class Sugerencias
 
-    attr_reader :titulo, :recomendaciones, :yavistas
+    attr_reader :titulo, :lista_sugerencias, :yavistas
 
     def initialize(titulo,usuario)
       @titulo=titulo
-      @recomendaciones=Array.new
+      @lista_sugerencias=Array.new
 	    @usuario=usuario
     end
 
@@ -25,13 +25,44 @@ module Recomendacion
 
 #Corazon de la clase, busca sugrencias basandose en los datos de la web tastekid.com. Y devuelve
 #un array con todas las recomendaciones.
-    def generar_recomendaciones(titulo)
+    def generar_recomendaciones
 
       uri = URI('https://www.tastekid.com/api/similar')
-      params = { :q => pelicula, :k => ENV['TOKEN_TASTEKID'] }
+      params = { :q => @titulo, :k => ENV['TOKEN_TASTEKID'] }
       uri.query = URI.encode_www_form(params)
-    end
 
+      page = Net::HTTP.get(uri)
+
+      my_hash = JSON.parse(page)
+
+      keys = my_hash.keys
+
+      my_hash.each do |key, array|
+
+        array.each{|x|
+
+          x.each{|key|
+
+
+      		if x==1
+      		key.each{ |y|
+            @lista_sugerencias << y["Name"]
+
+      		}
+      		end
+
+      		if key == "Results"
+      			x=1;
+      		end
+           }
+
+
+      }
+
+
+
+      end
+  end
 
   end
 end
