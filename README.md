@@ -19,14 +19,14 @@ El lenguaje elegido para desarrollar el bot es ~~python~~ Ruby.
 
 Descargar desde github el proyecto como zip e instalar bundler:
 
-```
+```ruby
 gem install bundler
 ```
 
 
 descomprimir y en el directorio donde se han descomprimido los fuentes ejecutar:
 
-```
+```ruby
 bundle install
 ```
 Es necesario definir dos variables de entorno
