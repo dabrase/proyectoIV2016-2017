@@ -9,8 +9,8 @@ Además se pretenden implementar los siguientes servicios:
 
 
  -   Servicio de logs para poder almacenar todo lo que le ocurre al bot.
-  -  Servicio que monitorize el estado de todos los demás servicios y en caso de detectar fallo en alguno avise al responsable humano via email o via telegram.
-  -  Primer servicio que reciba las peticiones y le pase la pelota al servicio correspondiente.
+ -  Servicio que monitorize el estado de todos los demás servicios y en caso de detectar fallo en alguno avise al responsable humano via email o via telegram.
+ -  Primer servicio que reciba las peticiones y le pase la pelota al servicio correspondiente.
  -   Servicio de traducción de peliculas ya que ahora mismo solo reconoce peliculas en ingles.
 
 El lenguaje elegido para desarrollar el bot es ~~python~~ Ruby.
