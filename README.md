@@ -19,16 +19,12 @@ El lenguaje elegido para desarrollar el bot es ~~python~~ Ruby.
 
 Descargar desde github el proyecto como zip e instalar bundler:
 
-´´´
-gem install bundler
-´´´
+´gem install bundler´
 
 
 descomprimir y en el directorio donde se han descomprimido los fuentes ejecutar:
 
-´´´
-bundle install
-´´´
+´bundle install´
 Es necesario definir dos variables de entorno
 TOKEN y TOKEN_TASTEKID. La primera con el token asociado a nuestro bot de telegram y el segundo token es necesario solicitarlo en la web tastekid.com
 
