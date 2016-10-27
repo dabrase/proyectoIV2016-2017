@@ -1,4 +1,5 @@
-Además se#Bot de Telegram:  queveobot.
+#Bot de Telegram:  queveobot.
+
 [![Build Status](https://travis-ci.org/LuisGi93/proyectoIV2016-2017.svg?branch=master)](https://travis-ci.org/LuisGi93/proyectoIV2016-2017)
 
 ### 1.- Descripción.
