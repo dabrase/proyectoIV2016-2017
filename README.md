@@ -119,7 +119,8 @@ bundle install
 
 ![img](https://i.sli.mg/OvlcRv.png)
 
-Tras lo cual si se ha podido instalar todo correctamente ejecuta  R|Rake.A continuación utiliza Rake para la ejecución de los test especificados en nuestro fichero [Rakefile](https://github.com/LuisGi93/proyectoIV2016-2017/blob/master/Rakefile)
+
+Tras lo cual si se ha podido instalar todo correctamente ejecuta  Rake.A continuación utiliza Rake para la ejecución de los test especificados en nuestro fichero [Rakefile](https://github.com/LuisGi93/proyectoIV2016-2017/blob/master/Rakefile)
 
 Travis por defecto cada vez que realizamos un commit a alguno de nuestros repositorios configurados:
 
@@ -127,6 +128,7 @@ Travis por defecto cada vez que realizamos un commit a alguno de nuestros reposi
 Ejecuta los tests y nos mostrará si los cambios en nuestro repositorio de github pasan los test que les hemos descrito:
 
 ![img](https://i.sli.mg/w1n6sc.png)
+
 
 
 La utilización de Travis viene justificada por su uso extendido, su facil integración con cualquier cambio que hagas sobre tu repositorio de Github y su amigable utilización.
