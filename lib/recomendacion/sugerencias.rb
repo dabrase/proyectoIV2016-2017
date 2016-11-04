@@ -5,6 +5,7 @@ require 'open-uri'
 require 'mechanize'
 require "resolv-replace.rb"
 require 'json'
+require_relative '../../config/database'
 
 module Recomendacion
 # Engloba los datos asociados a una solicitud de recomendacion. Busca recomendaciones a partir de los datos de un usuario
@@ -17,6 +18,7 @@ module Recomendacion
       @titulo=titulo
       @lista_sugerencias=Array.new
 	    @usuario=usuario
+      @db=Configuracion::Base_Datos.new('datos_usuario').db;
     end
 
     def to_s
