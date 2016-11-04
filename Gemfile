@@ -8,7 +8,8 @@ gem 'json'
 gem 'test-unit'
 gem 'shoulda'
 gem 'rspec'
-gem 'dbi'
+gem 'sequel'
+gem 'pg'
 
 group :test do
   gem 'rake'

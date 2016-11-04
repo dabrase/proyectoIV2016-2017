@@ -1,4 +1,3 @@
-require 'dbi'
 
 
 module Recomendacion
