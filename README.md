@@ -101,4 +101,8 @@ Ejemplo:
  /queveo mozart
  /queveo Titanic
  ```
+<<<<<<< HEAD
  
+=======
+ 
+>>>>>>> 2e4ace90bc253e40d70a381bbcf9127fbe82f662
