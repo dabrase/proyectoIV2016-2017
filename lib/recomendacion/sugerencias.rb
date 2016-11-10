@@ -12,12 +12,11 @@ module Recomendacion
 #y del titulo insertado
   class Sugerencias
 
-    attr_reader :titulo, :lista_sugerencias, :yavistas
+    attr_reader :titulo, :lista_sugerencias
 
-    def initialize(titulo,usuario)
+    def initialize(titulo)
       @titulo=titulo
       @lista_sugerencias=Array.new
-	    @usuario=usuario
       @db=Configuracion::Base_Datos.new('datos_usuario').db;
     end
 
@@ -27,7 +26,7 @@ module Recomendacion
 
 #Corazon de la clase, busca sugrencias basandose en los datos de la web tastekid.com. Y devuelve
 #un array con todas las recomendaciones.
-    def generar_recomendaciones
+    def generar_sugerencias
 
       uri = URI('https://www.tastekid.com/api/similar')
       params = { :q => @titulo, :k => ENV['TOKEN_TASTEKID'] }

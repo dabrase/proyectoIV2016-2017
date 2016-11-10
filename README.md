@@ -38,5 +38,67 @@ Actualmente el bot no se ejecuta automáticamente y por ahora solo responde cuan
 
 
 
+## 3.- Despliegue en heroku
 
 
+
+#### 3.1- Despliegue:
+
+En primer lugar nos descargamos la linea de comandos de heroku utilizando la orden
+
+ ```
+ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+ ```
+ 
+ Tras lo cual procedemos a loguearnos utilizando heroku login y creamos nuestra aplicación utilizando la orden:
+ 
+ ```
+ heroku apps:create --region eu queveobot
+ ```
+ 
+ Una vez hecho esto creamos el fichero Procfile:
+ 
+ ```
+bot: ruby bin/queveo.rb
+ ```
+ 
+
+ 
+ Una vez hecho esto definimos las variables de entorno que va a utilizar nuestra aplicación una vez la subamos en heroku con el comando:
+
+ 
+ ```
+ heroku config:set TOKEN=nanana
+ heroku config:set TOKEN_TASTEKID=nanana
+ heroku config:set POSTGRES_DATABASE=nanana
+ ```
+ 
+Tras lo cual nos vamos en heroku.com al apartado settings de nuestra aplicación, nos vamos a la pestaña "Deploy"  marcamos como método de deploy "github", seleccionamos master.
+
+A continuación debido a que no estamos utilzando en el Procfile la tarea "web" tenemos que decirle a heroku que le asigne un dino a la tarea "bot" para ello utilizamos el siguiente comando:
+
+ ```
+heroku ps:scale bot=1
+ ```
+
+Es necesario crear la base de datos que utliza el bot para ello nos vamos a heroku.com  y alli creamos una base de datos postgres 
+y copiando la url que nos indicaban en le apartado settings config vars se la asignamos a POSTGRES_DATABASE.
+ 
+ 
+ 
+#### 3.2.- Uso del bot:
+ 
+
+El bot recomienda peliculas, música, libros basandose en un titulo  que le mandes, para ello hace falta mandar un mensaje  siguiendo el siguiente formato:
+ 
+ ```
+ /queveo el titutlo de lo que sea
+ ```
+
+Ejemplo:
+ ```
+ /queveo the godfather
+ /queveo mozart
+ /queveo Titanic
+ ```
+ 
