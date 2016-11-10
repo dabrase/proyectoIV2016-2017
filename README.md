@@ -201,10 +201,19 @@ A continuación debido a que no estamos utilzando en el Procfile la tarea "web" 
  
 #### 3.2.- Uso del bot:
  
- El bot recomienda peliculas, música, libros basandose en un titulo  que le mandes, para ello hace falta mandar el título siguiendo el siguiente formato:
+
+Para agregar al bot accedemos a https://telegram.me/queveobot .
+El bot recomienda peliculas, música, libros basandose en un titulo  que le mandes, para ello hace falta mandar un mensaje  siguiendo el siguiente formato:
  
  ```
  /queveo el titutlo de lo que sea
+ ```
+
+Ejemplo:
+ ```
+ /queveo the godfather
+ /queveo mozart
+ /queveo Titanic
  ```
  El título tiene que estar en ingles, más adelante si da tiempo se pondrá en español. Ej:
  
