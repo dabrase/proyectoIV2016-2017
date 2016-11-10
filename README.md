@@ -134,5 +134,82 @@ Ejecuta los tests y nos mostrará si los cambios en nuestro repositorio de githu
 La utilización de Travis viene justificada por su uso extendido, su facil integración con cualquier cambio que hagas sobre tu repositorio de Github y su amigable utilización.
 
 
+## 3.- PaaS
 
+
+#### 3.1- Porqué heroku:
+1. en primer lugar porque estaba desarrollado en ruby lo cual me daba la sensación que al desplegar una aplicación escrita en ruby sería más facil que en otros PaaS
+
+2. En segundo lugar porque es muy conocido y por su buena documentación. Por ejemplo en los ejercicios he utilizado Bluemix, en Bluemix necesité un par de horas para comprender como se podía desplegar utilizando git y aun así aun no he conseguido comprender como hacer que solamente se despligue en Bluemix la aplicación cuando se pasan los test.
+
+3. Por  la facilidad para añadir bases de datos a las aplicaciones tardas apenas  5 minutos.
+
+#### 3.1- Despliegue:
+
+En primer lugar nos descargamos la linea de comandos de heroku utilizando la orden
+
+ ```
+ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+ ```
+ 
+ Tras lo cual procedemos a loguearnos utilizando heroku login y creamos nuestra aplicación en Europa utilizando la orden:
+ 
+ ```
+ heroku apps:create --region eu queveobot
+ ```
+ 
+ Una vez hecho esto creamos el fichero Procfile donde describimos "tipo" de aplicación y como arrancarla. Como nuestra aplicación no está escuchando para recibir tráfico https pues la declaramos en el Procfile de la siguiente forma:
+ 
+ ```
+bot: ruby bin/queveo.rb
+ ```
+ 
+ Según la documentación de heroku lo que viene a la izquierda de los ":"  define la "tarea" que realiza, en mi caso  la tarea "bot" es el proceso que escucha y como por ahora no tengo subprocesos lo dejo asi.
+ 
+ Como no queremos probar la aplicación antes de subirla hacemos uso del comando:
+ ```
+ heroku local bot
+ ```
+ 
+ Con lo cual comprobamos posibles fallos, como por ejemplo que se nos haya olvidado declarar las variables de entorno:
+ ![img](https://i.sli.mg/GZCRHJ.png)
+ 
+
+ 
+ Para que heroku local pueda conocer las variables de entorno hay que definirlas en un fichero .env poniendo cada token de la forma TOKEN=" " tras lo cual ya es posible probar nuestra aplicación en local antes de subirla utilizando heroku local.
+ 
+ ![img](https://i.sli.mg/Z7sG4k.png)
+ 
+ Una vez hecho esto definimos las variables de entorno que va a utilizar nuestra aplicación una vez la subamos en heroku con el comando:
+
+ 
+ ```
+ heroku config:set TOKEN1=nanana
+ ```
+ 
+Tras lo cual nos vamos en heroku.com al apartado settings de nuestra aplicación, nos vamos a la pestaña "Deploy"  marcamos como método de deploy "github", seleccionamos master y en deploy automático marcamos la casilla "wait for CI.." de tal manera que si Travis marca error no se lanze en heroku.
+
+A continuación debido a que no estamos utilzando en el Procfile la tarea "web" tenemos que decirle a heroku que le asigne un dino a la tarea "bot"
+:
+
+![img](https://i.sli.mg/cpvf3S.png)
+
+
+ La base de datos que utiliza el bot la habiamos creado anteriormente utilizando heroku.com y copiando la url que nos indicaban en le apartado settings config vars para que la utilizara nuestro bot.
+ 
+ 
+ 
+ #### 3.2.- Uso del bot:
+ 
+ El bot recomienda peliculas, música, libros basandose en un titulo  que le mandes, para ello hace falta mandar el título siguiendo el siguiente formato:
+ 
+ ```
+ /queveo el titutlo de lo que sea
+ ```
+ El título tiene que estar en ingles, más adelante si da tiempo se pondrá en español. Ej:
+ 
+ ![img](https://i.sli.mg/YbLCeH.png)
+ 
+ 
+ Actualmente el bot guarda todos los mensajes que se le envian a la base de datos a modo de logs y más adelante se guardará información que le especifique el usuario como peliculas que ya ha visto para que no se muestren en las sugerencias.
 
