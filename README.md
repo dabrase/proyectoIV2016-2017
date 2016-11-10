@@ -213,3 +213,7 @@ A continuación debido a que no estamos utilzando en el Procfile la tarea "web" 
  
  Actualmente el bot guarda todos los mensajes que se le envian a la base de datos a modo de logs y más adelante se guardará información que le especifique el usuario como peliculas que ya ha visto para que no se muestren en las sugerencias.
 
+Podemos observar todos los mensajes que tenemos registrados en nuestra base de datos que ha recibido el bot:
+
+![img](https://i.sli.mg/SVyRUg.png)
+
