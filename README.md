@@ -199,7 +199,7 @@ A continuación debido a que no estamos utilzando en el Procfile la tarea "web" 
  
  
  
- #### 3.2.- Uso del bot:
+#### 3.2.- Uso del bot:
  
  El bot recomienda peliculas, música, libros basandose en un titulo  que le mandes, para ello hace falta mandar el título siguiendo el siguiente formato:
  
