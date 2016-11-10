@@ -2,7 +2,7 @@ require 'test/unit'
 require 'shoulda'
 
 require_relative '../bin/queveo'
-
+require_relative '../lib/recomendacion/sugerencias'
 
 #Ahora mismo los test son muy básicos más adelante se añadiran
 #test con el objetivo de testear al bot midiendo sus ouputs en función de inputs que recibe de un "usuario"
@@ -26,6 +26,16 @@ class BotTest < Test::Unit::TestCase
          assert_equal datos_bot["result"]["id"], 299934959
          assert_equal datos_bot["result"]["first_name"], "queveo"
          assert_equal datos_bot["result"]["username"], "queveobot"
+     end
+
+     should "Bot es capaz de generar sugerencias " do
+       id_aleatorio=rand(0...100000)
+       usuario = Recomendacion::Informacion_Usuario.new(id_aleatorio)
+       recomendaciones=usuario.generar_recomendaciones('Mulan')
+       size = recomendaciones.size
+       hay_sugerencias= size > 2
+       assert_equal hay_sugerencias, true
+
      end
    end
 
