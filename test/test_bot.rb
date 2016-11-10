@@ -37,6 +37,13 @@ class BotTest < Test::Unit::TestCase
        assert_equal hay_sugerencias, true
 
      end
+
+     should "Test variables de entorno " do
+       assert_not_nil ENV["TOKEN"]
+       assert_not_nil ENV['TOKEN_TASTEKID']
+       assert_not_nil ENV['POSTGRES_DATABASE']
+
+     end
    end
 
 

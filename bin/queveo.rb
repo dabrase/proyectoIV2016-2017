@@ -80,7 +80,3 @@ class Bot
 
 
 end
-
-
-b =Bot.new(ENV['TOKEN'])
-b.empezar
